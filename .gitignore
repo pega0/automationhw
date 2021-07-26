@@ -1,0 +1,9 @@
+# ignore results folder
+results/
+
+# ignore PyCharm files
+.idea/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
