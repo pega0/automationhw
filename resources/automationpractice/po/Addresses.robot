@@ -10,5 +10,6 @@ Wait Until Page Is Loaded
     wait until page contains element  ${addresses_label}  ${WAIT_TIME}
 
 Click On "Proceed to checkout" Button
+    wait until element is visible  ${checkout_on_addresses_button}  ${WAIT_TIME}
     click button  ${checkout_on_addresses_button}
 

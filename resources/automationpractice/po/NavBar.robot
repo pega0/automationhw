@@ -11,6 +11,7 @@ Wait Until Page Is Loaded
     wait until element is visible  ${login_button}  ${WAIT_TIME}
 
 Click "Sign in" button
+    wait until element is visible  ${login_button}  ${WAIT_TIME}
     click element  ${login_button}
 
 Enter Search Term
@@ -18,5 +19,6 @@ Enter Search Term
     input text  ${search_box}  ${input_value}
 
 Click "Search" Button
+    wait until element is visible  ${search_button}  ${WAIT_TIME}
     click button  ${search_button}
 

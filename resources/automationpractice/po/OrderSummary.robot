@@ -10,6 +10,7 @@ Wait Until Page Is Loaded
     wait until page contains element  ${summary_label}  ${WAIT_TIME}
 
 Click On "I confirm my order" Button
+    wait until element is visible  ${confirm_order_button}  ${WAIT_TIME}
     click button  ${confirm_order_button}
 
 

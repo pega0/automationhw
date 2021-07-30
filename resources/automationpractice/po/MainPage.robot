@@ -18,6 +18,9 @@ ${check_out} =  xpath=//div[contains(concat(' ',@class, ' '), ' shopping_cart ')
 ${item_quantity_number} =  xpath=//span[@id='layer_cart_product_quantity']
 
 *** Keywords ***
+Wait Until Page Is Loaded
+    wait until page contains element  ${cart}  ${WAIT_TIME}
+
 Select Popular Tab
     wait until page contains element  ${popular_tab}  ${WAIT_TIME}
     click element  ${popular_tab}
@@ -25,9 +28,11 @@ Select Popular Tab
 Add To Cart
     [Arguments]  ${item_index}
     mouse over  xpath=(${product_container_xpath})[${item_index}]
+    wait until element is enabled  xpath=(${add_to_cart_xpath})[${item_index}]  ${WAIT_TIME}
     click element  xpath=(${add_to_cart_xpath})[${item_index}]
     wait until element is visible  ${add_layer}  ${WAIT_TIME}
     ${quantity} =  check if item added successfully to cart
+    wait until element is enabled  ${continue_shopping_button}  ${WAIT_TIME}
     click element  ${continue_shopping_button}
     wait until element is not visible  ${add_layer}  ${WAIT_TIME}
     scroll element into view  ${cart}
@@ -60,4 +65,5 @@ Get Item Count In Cart
     [Return]  ${count}
 
 Go To Checkout
+    wait until element is visible  ${check_out}  ${WAIT_TIME}
     click element  ${check_out}

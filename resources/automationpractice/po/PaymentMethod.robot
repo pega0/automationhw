@@ -10,6 +10,7 @@ Wait Until Page Is Loaded
     wait until page contains element  ${payment_label}  ${WAIT_TIME}
 
 Click On "Pay by bank wire"
+    wait until element is visible  ${pay_by_bank_wire_link}  ${WAIT_TIME}
     click element  ${pay_by_bank_wire_link}
 
 

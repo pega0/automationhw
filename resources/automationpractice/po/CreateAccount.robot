@@ -70,5 +70,6 @@ Fill "Alias" Field
     input text  ${alias_field}  ${value}
 
 Click On "Register" button
+    wait until element is visible  ${register_button}  ${WAIT_TIME}
     click button  ${register_button}
 

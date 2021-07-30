@@ -14,4 +14,5 @@ Fill Registration Email Address
     input text  ${registration_box}  ${email_address}
 
 Click On "Create an account" button
+    wait until element is visible  ${registration_button}  ${WAIT_TIME}
     click button  ${registration_button}

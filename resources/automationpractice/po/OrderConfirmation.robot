@@ -23,5 +23,6 @@ Get Order Reference
     [Return]  ${order_reference[0]}
 
 Go To Order History
+    wait until element is visible  ${back_to_orders_link}  ${WAIT_TIME}
     click element  ${back_to_orders_link}
 

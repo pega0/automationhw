@@ -33,6 +33,7 @@ Check Checkout List
 Delete Item From Cart
     [Arguments]  ${delete_index}
     ${name} =  Get Cart Item Name  ${delete_index}
+    wait until element is visible  xpath=(${cart_delete_xpath})[${delete_index}]  ${WAIT_TIME}
     click element  xpath=(${cart_delete_xpath})[${delete_index}]
     wait until page does not contain element  xpath=${cart_name_xpath}/a[contains(text(), '${name}')]  ${WAIT_TIME}
 
@@ -62,4 +63,5 @@ Check If Cart Is Empty
     wait until element is visible  ${cart_warn_box}  ${WAIT_TIME}
 
 Click On "Proceed to checkout" Button In Cart
+    wait until element is visible  ${checkout_link}  ${WAIT_TIME}
     click element  ${checkout_link}
